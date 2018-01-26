@@ -1,11 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>core</groupId>
-	<artifactId>ang_spring_mybatis</artifactId>
+	<groupId>org.core.temp</groupId>
+	<artifactId>mvn-springMybatis</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ang_spring_mybatis Maven Webapp</name>
+	<name>mvn-springMybatis Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
 	<!-- jar包 -->
 	<properties>
 		<!-- spring版本号 -->
@@ -19,37 +21,38 @@
 
 	<!-- 发布 -->
 	<build>
-		<resources>
+		<!-- <outputDirectory>WebContent\WEB-INF\classes</outputDirectory> -->
+		<!-- <resources>
 			<resource>
 				<directory>src/main/java</directory>
-				<includes>
-					<include>**/*.properties</include>
-					<include>**/*.xml</include>
-				</includes>
-				<!-- 是否替换资源中的属性 -->
+				是否替换资源中的属性
 				<filtering>false</filtering>
 			</resource>
 			<resource>
 				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
 			</resource>
-		</resources>
+		</resources> -->
 		<plugins>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> 
-				<version>2.1.1</version> <configuration> <webResources> <resource> <directory>WebContent</directory> 
-				</resource> </webResources> </configuration> </plugin> <plugin> <groupId>org.apache.tomcat.maven</groupId> 
-				<artifactId>tomcat7-maven-plugin</artifactId> <version>2.2</version> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<!-- 配置Tomcat插件 -->
+			<!-- <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin> -->
 		</plugins>
-		<defaultGoal>compile</defaultGoal>
+		<finalName>mvn-springMybatis</finalName>
 	</build>
 
 	<dependencies>
